@@ -7,7 +7,12 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProgressComponent } from './progress/progress.component';
 import { Graficas1Component } from './graficas1/graficas1.component';
 import { PAGES_ROUTES } from './pages.routes';
+import { FormsModule } from '@angular/forms';
+import { IncrementadorComponent } from '../components/incrementador/incrementador.component';
 
+// ng2 - Charts
+import { ChartsModule } from 'ng2-charts';
+import { GraficoDonaComponent } from '../components/grafico-dona/grafico-dona.component';
 
 
 
@@ -16,18 +21,21 @@ import { PAGES_ROUTES } from './pages.routes';
         DashboardComponent,
         ProgressComponent,
         PagesComponent,
-        Graficas1Component
+        Graficas1Component,
+        IncrementadorComponent,
+        GraficoDonaComponent
 
     ],
     // Las exportaciones son necesarias si voy a utilizar estos componentes en algún otro lugar fuera de lo declarado en este módulo
     exports: [
         DashboardComponent,
         ProgressComponent,
-        PagesComponent,
         Graficas1Component
     ],
     imports: [
         SharedModule,
+        FormsModule,
+        ChartsModule,
         PAGES_ROUTES
     ]
 })
